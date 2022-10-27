@@ -10,6 +10,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.Set;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.mock;
 
 @ExtendWith(MockitoExtension.class)
@@ -22,14 +23,14 @@ public class DataServiceTest {
     void loadStringDataTest() {
         System.out.println("a)\tSort the loaded data alphabetically for the string data");
         System.out.println(dataService.loadAndSortedStringData());
-        System.out.println(dataService.loadAndSortedStringData().size());
+        assertEquals(50000, dataService.loadAndSortedStringData().size());
     }
 
     @Test
     void loadIntDataTest() {
         System.out.println("b)\tSort the loaded data numerically for the numeric data ");
         System.out.println(dataService.loadAndSortedIntData());
-        System.out.println(dataService.loadAndSortedIntData().size());
+        assertEquals(50000, dataService.loadAndSortedIntData().size());
     }
 
 //    e)	Write the unit test similar to c)
@@ -38,7 +39,7 @@ public class DataServiceTest {
         Set<CitySortByName> citiesSortByName = dataService.loadSortedCity(CitySortByName.class);
         System.out.println("CitySortByName");
         System.out.println(citiesSortByName);
-        System.out.println(citiesSortByName.size());
+        assertEquals(50000, citiesSortByName.size());
     }
 
     @Test
@@ -46,6 +47,6 @@ public class DataServiceTest {
         Set<CitySortByCode> citiesSortByCode = dataService.loadSortedCity(CitySortByCode.class);
         System.out.println("CitySortByCode");
         System.out.println(citiesSortByCode);
-        System.out.println(citiesSortByCode.size());
+        assertEquals(50000, citiesSortByCode.size());
     }
 }
