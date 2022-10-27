@@ -23,6 +23,7 @@ public interface DataService {
     List<Integer> loadAndSortedIntData();
 
     /**
+     * Получить города из файла с требуемой сортировкой
      *
      * @param clazz Класс с указанием, по какому полю будет проводиться сортировка
      * @return Сортированное множество городов

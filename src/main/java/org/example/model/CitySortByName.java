@@ -1,8 +1,10 @@
 package org.example.model;
 
+/**
+ * Город сортируемый по названию
+ */
 public class CitySortByName extends City implements Comparable<City> {
 
-// из за повторений (Aarhus целых 73 раза встречается) пришлось усложнять
     @Override
     public int compareTo(City city) {
         if (city == null) {

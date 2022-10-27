@@ -1,17 +1,28 @@
 package org.example.model;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
+/**
+ * Город
+ */
 @Setter
 @Getter
 public class City {
 
+    /**
+     * id
+     */
     int id;
 
+    /**
+     * Код города
+     */
     int code;
 
+    /**
+     * Название города
+     */
     String name;
 
     @Override
