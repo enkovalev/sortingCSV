@@ -23,7 +23,8 @@ public class DataServiceImpl implements DataService {
         return new File(inputPath.toUri());
     }
 
-//    a)	Sort the loaded data alphabetically for the string data
+    //    a)	Sort the loaded data alphabetically for the string data
+    @Override
     public List<String> loadAndSortedStringData() {
         File inputFile = getInputFile();
         List<String> stringValue = new ArrayList<>();
@@ -44,7 +45,8 @@ public class DataServiceImpl implements DataService {
         return stringValue.stream().sorted().collect(Collectors.toList());
     }
 
-//    b)	Sort the loaded data numerically for the numeric data
+    //    b)	Sort the loaded data numerically for the numeric data
+    @Override
     public List<Integer> loadAndSortedIntData() {
         File inputFile = getInputFile();
         List<Integer> intValue = new ArrayList<>();
@@ -67,7 +69,8 @@ public class DataServiceImpl implements DataService {
         return intValue.stream().sorted().collect(Collectors.toList());
     }
 
-//    d)	Create data structure that combines both types of data structures
+    //    d)	Create data structure that combines both types of data structures
+    @Override
     public <T extends City & Comparable<City>> Set<T> loadSortedCity(Class<T> clazz) {
         File inputFile = getInputFile();
         Set<T> sortedCities = new TreeSet<>();
@@ -96,6 +99,7 @@ public class DataServiceImpl implements DataService {
         return sortedCities;
     }
 
+    @Override
     public void addCityToRepository() {
         File inputFile = getInputFile();
         List<City> cities = new ArrayList<>();

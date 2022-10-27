@@ -20,6 +20,7 @@ public class CityRepositoryImpl implements CityRepository {
 
     private final JdbcTemplate jdbcTemplate;
 
+    @Override
     public void addCities(List<City> cities) {
         jdbcTemplate.batchUpdate(INSERT_CITIES, new BatchPreparedStatementSetter() {
             @Override
@@ -35,10 +36,12 @@ public class CityRepositoryImpl implements CityRepository {
         });
     }
 
+    @Override
     public List<City> getSortedCityByName() {
         return jdbcTemplate.query(SELECT_SORTED_BY_NAME, new BeanPropertyRowMapper<>(City.class));
     }
 
+    @Override
     public List<City> getSortedCityByCode() {
         return jdbcTemplate.query(SELECT_SORTED_BY_CODE, new BeanPropertyRowMapper<>(City.class));
     }
